@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import "./App.css"
 
 function App() {
+  const [fname, setFname] = useState("")
+
+  const handleChange = e => {
+    setFname(e.target.value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>React Form Handling</h1>
+      <form>
+        <label>
+          First Name: 
+          <input type="text" value={fname} onChange={handleChange}/>
+        </label>
+      </form>
+      <h5>First name: {fname}</h5>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
