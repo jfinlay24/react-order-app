@@ -8,7 +8,7 @@ function NameInput() {
 
   const handleChange = e => {
     setState({
-      ...state,
+      ...state, // This merges both first name and last name. It would override each other otherwise.
       [e.target.name]: e.target.value,
     })
   }
