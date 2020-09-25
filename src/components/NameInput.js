@@ -14,7 +14,7 @@ function NameInput() {
   }
 
   return (
-    <div>
+    <div> 
       <h1>React Form Handling</h1>
       <form>
         <label>

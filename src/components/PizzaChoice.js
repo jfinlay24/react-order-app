@@ -4,7 +4,7 @@ class PizzaChoice extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: "Select Pizza",
+            value: "Select a pizza",
         };
 
         // this.handleChange = this.handleChange.bind(this);
@@ -12,7 +12,7 @@ class PizzaChoice extends React.Component {
     }
 
     handleSubmit(event) {
-        alert("Your pizza choice is: " + this.state.value);
+        //alert("Your pizza choice is: " + this.state.value);
         event.preventDefault();
     }
 
@@ -22,19 +22,24 @@ class PizzaChoice extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Pick a pizza:
-                    <select>
-                        {this.props.menu.map(menu => (
-                            <option key={menu.id} value={menu.title}>
-                                {menu.title}
-                            </option>
-                        ))}
-                    </select>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Pick a pizza:
+                    <select value={this.state.value} onChange={this.handleChange}>
+                            {this.props.menu.map(menu => (
+                                <option key={menu.id} value={menu.title}>
+                                    {menu.title}
+                                </option>
+                            ))}
+                        </select>
+                    </label>
+                    <input type="submit" value="Submit" />
+                </form>
+                <h5>
+                    Pizza Choice: {this.state.value}
+                </h5>
+            </div>
 
 
         )
