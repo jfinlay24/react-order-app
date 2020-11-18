@@ -1,46 +1,23 @@
-import React, { useState } from "react"
+import React from "react"
 
-function NameInput() {
-  const [state, setState] = useState({
-    fname: "",
-    lname: "",
-  })
+function NameInput({ nameInput, firstName, onFirstNameChanged, lastName, onLastNameChanged }) {
 
-  const handleChange = e => {
-    setState({
-      ...state, // This merges both first name and last name. It would override each other otherwise.
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  return (
-    <div> 
-      <h1>React Form Handling</h1>
-      <form>
-        <label>
-          First Name:{" "}
-          <input
-            type="text"
-            name="fname"
-            value={state.fname}
-            onChange={handleChange}
-          />
-        </label>{" "}
-        <label>
-          Last Name:{" "}
-          <input
-            type="text"
-            name="lname"
-            value={state.lname}
-            onChange={handleChange}
-          />
-        </label>
-      </form>
-      <h5>
-        Name: {state.fname} {state.lname}
-      </h5>
-    </div>
-  )
+    return (
+        <div>
+            <div class="nameInput">Name input is: {nameInput}</div>
+            <input
+                value={firstName}
+                placeholder="First Name"
+                onChange={(e) => onFirstNameChanged(e.target.value)}
+            />
+            <tr></tr>
+            <input
+                value={lastName}
+                placeholder="Last Name"
+                onChange={(e) => onLastNameChanged(e.target.value)}
+            />
+        </div>
+    )
 }
 
 export default NameInput
