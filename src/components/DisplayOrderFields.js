@@ -12,6 +12,9 @@ function DisplayOrderFields({ fullname, selectedPizza }) {
             <h5>
                 Pizza Choice: {selectedPizza}
             </h5>
+            <h5>
+                Pizza Description: {selectedPizza}
+            </h5>
             <textarea
                 //value={commentInput} 
                 placeholder="Any Comments?"
