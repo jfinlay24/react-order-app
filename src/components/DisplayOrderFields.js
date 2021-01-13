@@ -1,7 +1,7 @@
 import React from "react";
 import "../style.css"
 
-function DisplayOrderFields({ fullname, selectedPizza }) {
+function DisplayOrderFields({ fullname, selectedPizza, menu }) {
 
 
     return (

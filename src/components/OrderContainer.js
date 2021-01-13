@@ -26,7 +26,9 @@ function OrderContainer() {
     const [firstName, setFirstName] = React.useState("");
     const [lastName, setLastName] = React.useState("");
     const [onPizzaChoice, setPizzaChoice] = React.useState("");
-    
+    const menus = menu.filter(menus => menus.title === onPizzaChoice);
+    console.log(menus[0]);
+
     return (
         <div class="main">
             <Header />
@@ -44,13 +46,11 @@ function OrderContainer() {
                 />
             </div>
             <div>
-            {menu.map(menu => (
-                <li>
-                {menu.description}
-                </li>
-            ))}
+                
+                poop - {}
             </div>
             <DisplayOrderFields
+                menu={menu}
                 fullname={`${firstName} ${lastName}`}
                 selectedPizza={onPizzaChoice}
             />
