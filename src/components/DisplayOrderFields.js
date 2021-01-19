@@ -1,7 +1,7 @@
 import React from "react";
 import "../style.css"
 
-function DisplayOrderFields({ fullname, selectedPizza, menu }) {
+function DisplayOrderFields({ fullname, selectedPizza, selectedDes }) {
 
 
     return (
@@ -13,7 +13,7 @@ function DisplayOrderFields({ fullname, selectedPizza, menu }) {
                 Pizza Choice: {selectedPizza}
             </h5>
             <h5>
-                Pizza Description: {selectedPizza}
+                Pizza Description: {selectedDes}
             </h5>
             <textarea
                 //value={commentInput} 
